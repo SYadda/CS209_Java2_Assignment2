@@ -1,10 +1,10 @@
 package cn.edu.sustech.cs209.chatting.client;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
@@ -58,7 +58,8 @@ public class Client {
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
       con.setRequestMethod("GET");
 
-      BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream())); // StandardCharsets.UTF_8
+      BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+      // StandardCharsets.UTF_8
       StringBuilder sb = new StringBuilder();
       String line;
       while ((line = br.readLine()) != null) {
